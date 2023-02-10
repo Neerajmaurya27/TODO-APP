@@ -1,0 +1,70 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "A simple Todo API",
+        "version": "1.0.0",
+        "title": "Todo API"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Get a list of Todos",
+                "description": "Returns a list of all Todos in the system",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of Todos",
+                        "schema": {
+                            "type": "array"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a new Todo",
+                "description": "Creates a new Todo in the system",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Todo object that needs to be created",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Todo created"
+                        
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update a Todo",
+                "description": "Updates a Todo based on the ID passed in the path parameter",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the Todo",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
+            }
+        }
+            
+        }
+    }
